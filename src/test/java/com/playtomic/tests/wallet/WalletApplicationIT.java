@@ -7,9 +7,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @ActiveProfiles(profiles = "test")
-public class WalletApplicationIT {
+class WalletApplicationIT {
 
 	@Test
-	public void emptyTest() {
+	void emptyTest() {
 	}
 }

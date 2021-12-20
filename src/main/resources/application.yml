@@ -1,12 +1,14 @@
 spring.profiles.active: develop
 server:
   port: 8090
+  servlet.context-path: /wallet
 ---
 spring:
-  profiles: develop
+  config.activate.on-profile: develop
   jpa:
     show_sql: false
     database: H2
+    hibernate.ddl-auto: create
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE;IGNORECASE=TRUE
     initialize: false
@@ -14,7 +16,7 @@ stripe.simulator.charges-uri: https://sandbox.playtomic.io/v1/stripe-simulator/c
 stripe.simulator.refunds-uri: https://sandbox.playtomic.io/v1/stripe-simulator/payments/{payment_id}/refunds
 ---
 spring:
-  profiles: test
+  config.activate.on-profile: test
   jpa:
     show_sql: false
     database: H2
